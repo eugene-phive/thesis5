@@ -1,0 +1,102 @@
+{
+  "name": "thesis-5",
+  "version": "1.0.1",
+  "productName": "Thesis 5",
+  "description": "Local-first Markdown notes app with a block editor.",
+  "author": { "name": "Eugene Phive", "email": "okizyaki@gmail.com" },
+  "private": true,
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "rebuild": "electron-rebuild -f -w better-sqlite3",
+    "typecheck": "nuxt typecheck",
+    "pack": "npm run generate && electron-builder --dir",
+    "dist": "npm run generate && electron-builder --win nsis",
+    "dist:linux": "npm run generate && electron-builder --linux AppImage deb",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.2.1",
+    "@tiptap/core": "^3.32.0",
+    "@tiptap/extension-drag-handle": "^3.32.0",
+    "@tiptap/extension-drag-handle-vue-3": "^3.32.0",
+    "@tiptap/extension-image": "^3.32.0",
+    "@tiptap/extension-table": "^3.32.0",
+    "@tiptap/extension-table-cell": "^3.32.0",
+    "@tiptap/extension-table-header": "^3.32.0",
+    "@tiptap/extension-table-row": "^3.32.0",
+    "@tiptap/extension-task-item": "^3.32.0",
+    "@tiptap/extension-task-list": "^3.32.0",
+    "@tiptap/markdown": "^3.32.0",
+    "@tiptap/pm": "^3.32.0",
+    "@tiptap/starter-kit": "^3.32.0",
+    "@tiptap/suggestion": "^3.32.0",
+    "@tiptap/vue-3": "^3.32.0",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/turndown": "^5.0.6",
+    "docx": "^9.13.0",
+    "electron": "^44.9.1",
+    "electron-builder": "^26.15.3",
+    "mammoth": "^1.13.0",
+    "marked": "^18.1.1",
+    "nuxt": "^3.21.11",
+    "nuxt-electron": "^0.7.0",
+    "sass-embedded": "^1.106.1",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2",
+    "typescript": "~5.9",
+    "vite-plugin-electron": "^1.1.2",
+    "vite-plugin-electron-renderer": "^1.0.0",
+    "vue": "^3.5.40",
+    "vue-router": "^5.2.0",
+    "vue-tsc": "^3.3.13"
+  },
+  "build": {
+    "appId": "com.thesis5.app",
+    "productName": "Thesis 5",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      ".output/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "public/favicon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "portable": {
+      "artifactName": "Thesis 5 ${version} Portable.exe"
+    }
+  },
+  "allowScripts": {
+    "better-sqlite3@13.0.3": true,
+    "esbuild@0.28.2": true,
+    "electron-winstaller@5.4.0": true
+  }
+}

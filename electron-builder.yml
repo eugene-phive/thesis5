@@ -1,0 +1,44 @@
+appId: com.thesis5.app
+productName: Thesis 5
+copyright: Copyright © 2026 Eugene Phive
+asar: true
+npmRebuild: false
+directories:
+  output: release
+files:
+  - package.json
+  - dist-electron/**/*
+  - .output/public/**/*
+  - "!node_modules/**/*"
+  - node_modules/better-sqlite3/package.json
+  - node_modules/better-sqlite3/lib/**/*
+  - node_modules/better-sqlite3/prebuilds/**/*
+asarUnpack:
+  - node_modules/better-sqlite3/**/*
+extraResources:
+  - from: public/favicon.ico
+    to: favicon.ico
+win:
+  icon: public/favicon.ico
+  executableName: Thesis 5
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Thesis 5
+  installerIcon: public/favicon.ico
+  uninstallerIcon: public/favicon.ico
+  installerHeaderIcon: public/favicon.ico
+  deleteAppDataOnUninstall: false
+linux:
+  icon: _materials/img/ico_512x512.png
+  category: Office
+  target:
+    - AppImage
+    - deb
