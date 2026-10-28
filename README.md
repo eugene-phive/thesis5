@@ -8,10 +8,10 @@ All materials are stored as standard Markdown files on your computer. No servers
 
 ## ⬇️ Download
 
-You can download ready-to-use builds for your operating system from the [Releases](LINK_TO_YOUR_REPO_RELEASES) page.
+You can download ready-to-use builds for your operating system from the [Releases](https://github.com/eugene-phive/thesis5/releases) page.
 
-- **Windows (Installer):** [Download Thesis 5 Setup (v1.0.1)](LINK_TO_NSIS_INSTALLER)
-- **Windows (Portable):** [Download Thesis 5 Portable (v1.0.1)](LINK_TO_PORTABLE_EXE)
+- **Windows (Installer):** [Download thesis5-1.0.1-win-setup.exe](https://github.com/eugene-phive/thesis5/releases/download/v1.0.1/thesis5-1.0.1-win-setup.exe)
+- **Windows (Portable):** [Download thesis5-1.0.1-win-portable.rar](https://github.com/eugene-phive/thesis5/releases/download/v1.0.1/thesis5-1.0.1-win-portable.rar)
 
 ## ✨ Key Features
 
